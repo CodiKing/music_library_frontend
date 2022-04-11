@@ -1,26 +1,36 @@
 import React, { useState,useEffect } from 'react';
 
 
-const Display_Music=(props)=>{
-    const [postData, setPostData] =useState([])
-
-    useEffect(() =>{
-      let tempPostData=props.songEntries.map(entry =>{
-        return [entry.id, entry.title, entry.artist, entry.album, entry.release_date, entry.genre]
-      });
-      setPostData(tempPostData);
-  
-    }, [props.songEntries])
+const Display_Music = (props)=>{
     return(
     <table>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Artist</th>
-        <th>Album</th>
-        <th>Release Date</th>
-        <th>Genre</th>
+        <thread>
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Album</th>   
+            <th>Release Date</th>   
+            <th>Genre</th>   
+        </tr>   
+        </thread>
+        <tbody>
+        {props.songEntries.map((song,index) =>{
+            return(
+            <tr>
+                <td>{index +1}</td>
+                <td>{song.title}</td>
+                <td>{song.artist}</td>
+                <td>{song.album}</td>
+                <td>{song.release_date}</td>
+                <td>{song.genre}</td>
+                
+            </tr>    
+            )
+        })}
+
+
+        </tbody>
     </table>
-      
     )
 }
 

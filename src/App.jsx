@@ -15,7 +15,6 @@ function App() {
       console.log('getAllSongs Response',response.data)
       getSongs(response.data);
     
-   
   };
 
   return (
