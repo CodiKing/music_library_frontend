@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+
 
 
 const Display_Music = (props)=>{
@@ -23,8 +23,10 @@ const Display_Music = (props)=>{
                 <td>{song.album}</td>
                 <td>{song.release_date}</td>
                 <td>{song.genre}</td>
-                
-            </tr>    
+               
+                    
+            </tr> 
+          
             )
         })}
 

@@ -3,11 +3,10 @@
 const Search_Bar=(props)=>{
     return(
 
-        <div>
-           
-            <button>Search</button>
-            
-        </div>
+        <form>
+        <label>Search</label>
+        <input type='search'/>   
+        </form>
     )
 }
 export default Search_Bar;
