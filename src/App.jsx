@@ -3,7 +3,7 @@ import axios from 'axios';
 import Search_Bar from './Search_Bar';
 import Display_Music from './Display_Music';
 import Add_New_Song from './Add_New_Song';
-import DeleteASong from './Delete_A_Song';
+import Delete_A_Song from './Delete_A_Song';
 function App() {
   const [songs, getSongs] = useState([])
 
@@ -23,19 +23,20 @@ function App() {
       await getAllSongs();
     }
   };
-  async function deleteSong(songToDelete){
-    let response = await axios.delete('http://127.0.0.1:8000/api/music/',songToDelete);
+  async function deleteSong(id){
+    let response = await axios.delete(`http://127.0.0.1:8000/api/music/${id}`);
     if(response.status ===204){
       await getAllSongs();
     }
   };
+ 
   return (
     <div>
       <header>
         <h2>
           Music Library!
         </h2>
-      <Search_Bar></Search_Bar>
+      {/* <Search_Bar songEntries={songs}/> */}
       <h2>Add a New Song Here!</h2>
       <Add_New_Song newSongEntry={createNewSong}/>
       </header>
@@ -43,7 +44,7 @@ function App() {
       <Display_Music songEntries={songs}/>
       </body>
       <footer>
-      <DeleteASong songDeletion={deleteSong}/>
+      <Delete_A_Song songDeletion={deleteSong}/>
       </footer>
     </div>
   );

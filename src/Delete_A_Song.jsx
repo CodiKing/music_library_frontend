@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const DeleteASong = (props) => {
+const Delete_A_Song = (props) => {
     const[id,deleteId]=useState();
 
     function handleSubmit(event){
@@ -20,4 +20,4 @@ const DeleteASong = (props) => {
     );
 }
  
-export default DeleteASong;
+export default Delete_A_Song;
